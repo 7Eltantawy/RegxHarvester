@@ -11,7 +11,7 @@
     "String collector"
   ],
   "homepage": "https://github.com/HasanEltantawy/RegxHarvester/blob/main/README.md",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "MIT License",
   "bugs": {
     "url": "https://github.com/HasanEltantawy/RegxHarvester/issues",
     "email": "hasaneltantawy@gmail.com"
