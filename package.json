@@ -2,7 +2,7 @@
   "name": "regx-harvester",
   "displayName": "Regx Harvester",
   "icon": "assets/icon.png",
-  "description": "Collect string from files.",
+  "description": "Configure once harvest everywhere.",
   "version": "0.0.1",
   "publisher": "7eltantawy",
   "keywords": [
