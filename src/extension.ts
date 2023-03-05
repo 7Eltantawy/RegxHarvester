@@ -1,0 +1,43 @@
+import { commands, ExtensionContext, window } from "vscode";
+import * as harvestCommands from "./commands/commands";
+import { chooseTemplate } from "./commands/get-selected-template";
+
+// Select Template
+// Create .stringharvest Folder
+// store data in .stringharvest
+// Select Path of output
+// Createing......
+// Ask if you to update if any change happened
+// Ask if you to replace
+
+export function activate(context: ExtensionContext) {
+  context.subscriptions.push(
+    commands.registerCommand("extension.chooseTemplate", chooseTemplate),
+
+    //
+    commands.registerCommand(
+      "extension.harvestSelectedFile",
+      harvestCommands.harvestSelectedFile
+    ),
+    commands.registerCommand(
+      "extension.harvestSelectedFolder",
+      harvestCommands.harvestSelectedFolder
+    ),
+    commands.registerCommand(
+      "extension.harvestSelectedText",
+      harvestCommands.harvestSelectedText
+    ),
+    commands.registerCommand(
+      "extension.harvestWorkspace",
+      harvestCommands.harvestWorkspace
+    ),
+    commands.registerCommand(
+      "extension.harvestReplace",
+      harvestCommands.harvestReplace
+    ),
+    commands.registerCommand(
+      "extension.harvestReverseReplace",
+      harvestCommands.harvestReverseReplace
+    )
+  );
+}

@@ -1,0 +1,180 @@
+export const extensionSchema = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RegxHarvest",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "RegxHarvest version"
+    },
+    "selectedTemplate": {
+      "$ref": "#/definitions/TemplateBase",
+      "description": "Template that RegxHarvest use to harvest regx"
+    }
+  },
+  "required": ["version", "selectedTemplate"],
+  "definitions": {
+    "regx": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Regx pattern"
+        },
+        "flags": {
+          "type": "string",
+          "description": "Regx flags"
+        }
+      },
+      "required": ["source"]
+    },
+    "templateKeyConfig": {
+      "type": "object",
+      "description": "Configuration for generated keys",
+      "properties": {
+        "keyCase": {
+          "type": "string",
+          "description": "Key case",
+          "enum": [
+            "camelCase",
+            "capitalCase",
+            "constantCase",
+            "dotCase",
+            "headerCase",
+            "noCase",
+            "paramCase",
+            "pascalCase",
+            "pathCase",
+            "sentenceCase",
+            "snakeCase",
+            "lowerCase",
+            "localeLowerCase",
+            "lowerCaseFirst",
+            "spongeCase",
+            "swapCase",
+            "titleCase",
+            "upperCase",
+            "localeUpperCase",
+            "upperCaseFirst",
+            "isUpperCase",
+            "isLowerCase"
+          ]
+        },
+        "keyConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/keyConfig"
+          },
+          "description": "Regx flags"
+        }
+      },
+      "required": ["keyCase"]
+    },
+    "keyConfig": {
+      "type": "object",
+      "description": "Configuration for generated keys",
+      "properties": {
+        "regx": {
+          "$ref": "#/definitions/regx",
+          "description": "Applyed for generated key that match"
+        },
+        "replaceWith": {
+          "type": "string",
+          "description": "Replace generated key with\\nYou can use <{key}> to be replaced with key"
+        }
+      }
+    },
+    "TemplateBase": {
+      "type": "object",
+      "properties": {
+        "templateName": {
+          "type": "string",
+          "description": "Template name"
+        },
+        "regxToIncludes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/regx"
+          },
+          "description": "Regx to be used for harvesting"
+        },
+        "regxToExcludes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/regx"
+          },
+          "description": "Regx to be exculded from selected regx"
+        },
+        "extsToIncludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Files extensions to be included will harvesting"
+        },
+        "extsToExcludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Files extensions to be exculded will harvesting"
+        },
+        "foldersToIncludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Folders to be inculded will harvesting"
+        },
+        "foldersToExcludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Folders to be exculded will harvesting"
+        },
+        "outputPath": {
+          "type": "string",
+          "description": "Output path of generated file"
+        },
+        "outputFileName": {
+          "type": "string",
+          "description": "Output file name\\nfor example:\\nAppString.dart"
+        },
+        "outputFileTemplate": {
+          "type": "string",
+          "description": "Output file body template\\nfor example:\\nclass AppString{\\n<{body}>\\n}"
+        },
+        "stringTemplate": {
+          "type": "string",
+          "description": "String template that will be stored in generated file\\nfor example:\\nstatic const String <{key}> = <{value}>"
+        },
+        "replaceTemplate": {
+          "type": "string",
+          "description": "Template that will used for replace string in original files\\nfor example:\\nAppString.<{key}>"
+        },
+        "templateKeyConfig": {
+          "$ref": "#/definitions/templateKeyConfig"
+        },
+        "replaceAfterCreate": {
+          "type": "boolean",
+          "description": "Replace text after harvesting with replaceTemplate"
+        }
+      },
+      "required": [
+        "templateName",
+        "regxToIncludes",
+        "outputPath",
+        "outputFileName",
+        "outputFileTemplate",
+        "stringTemplate",
+        "replaceTemplate",
+        "templateKeyConfig",
+        "replaceAfterCreate"
+      ]
+    }
+  }
+}
+
+`;

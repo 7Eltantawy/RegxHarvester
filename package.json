@@ -1,0 +1,138 @@
+{
+  "name": "regx-harvester",
+  "displayName": "Regx Harvester",
+  "icon": "assets/icon.png",
+  "description": "Collect string from files.",
+  "version": "0.0.1",
+  "publisher": "7eltantawy",
+  "keywords": [
+    "String extract",
+    "Regx extract",
+    "String collector"
+  ],
+  "author": {
+    "name": "Hassan Eltantawy"
+  },
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.harvestReplace",
+        "title": "Harvest Replace",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.harvestReverseReplace",
+        "title": "Harvest Reverse Replace",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.chooseTemplate",
+        "title": "Harvest Choose Template",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.harvestSelectedFile",
+        "title": "Harvest File",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.harvestSelectedFolder",
+        "title": "Harvest Folder",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.harvestSelectedText",
+        "title": "Harvest Text",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.harvestWorkspace",
+        "title": "Harvest Workspace",
+        "icon": "assets/icon.png"
+      },
+      {
+        "command": "extension.highlighter",
+        "title": "Harvest Highlighter",
+        "icon": "assets/icon.png"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.harvestSelectedFolder",
+          "when": "explorerResourceIsFolder",
+          "group": "harvester"
+        },
+        {
+          "command": "extension.harvestSelectedFile",
+          "when": "resourceScheme == 'file'",
+          "group": "harvester"
+        },
+        {
+          "command": "extension.harvestSelectedText",
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "harvester"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "extension.harvestSelectedText",
+          "when": "editorLangId == dart"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Regx Harvester",
+      "properties": {
+        "regx-harvester.templates": {
+          "type": "array",
+          "default": [],
+          "description": "Create your own templates."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/change-case": "^2.3.1",
+    "@types/lodash": "^4.14.121",
+    "@types/vscode": "^1.76.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "@vscode/test-electron": "^2.2.3",
+    "@types/mkdirp": "^0.5.2"
+  },
+  "dependencies": {
+    "glob": "^7.2.0",
+    "glob-promise": "^4.2.2",
+    "mkdirp": "^0.5.1",
+    "lodash": "^4.17.19"
+  }
+}
