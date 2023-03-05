@@ -8,7 +8,8 @@
   "keywords": [
     "String extract",
     "Regx extract",
-    "String collector"
+    "String collector",
+    "localization"
   ],
   "homepage": "https://github.com/HasanEltantawy/RegxHarvester/blob/main/README.md",
   "license": "MIT License",
