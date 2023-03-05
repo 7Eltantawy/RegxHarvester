@@ -65,10 +65,10 @@ The base template for harvesting regular expressions and generating localized st
 - `foldersToIncludes` (array of strings): Folders to include for harvesting.
 - `foldersToExcludes` (array of strings): Folders to exclude from selected folders.
 - `outputPath` (string): The output path of the generated file.
-- `outputFileName` (string): The output file name (e.g. AppString.dart).
-- `outputFileTemplate` (string): The output file body template (e.g. class AppString{\n<{body}>\n}).
-- `stringTemplate` (string): The string template that will be stored in the generated file (e.g. static const String <{key}> = <{value}>).
-- `replaceTemplate` (string): The template that will be used to replace the - string in the original files (e.g. AppString.<{key}>).
+- `outputFileName` (string): The output file name (e.g. `app_string.dart`).
+- `outputFileTemplate` (string): The output file body template (e.g. `class AppString{\n<{body}>\n}`).
+- `stringTemplate` (string): The string template that will be stored in the generated file (e.g. `static const String <{key}> = <{value}>`).
+- `replaceTemplate` (string): The template that will be used to replace the - string in the original files (e.g. `AppString.<{key}>`).
 - `templateKeyConfig` (templateKeyConfig): The configuration for generated keys.
 - `replaceAfterCreate` (boolean): Whether to replace text after harvesting with replaceTemplate.
 
@@ -91,7 +91,7 @@ Configuration for generated keys. Includes the following properties:
 Configuration for generated keys. Includes the following properties:
 
 - `regx` (regx): The regular expression to be applied to the generated key that matches it.
-- `replaceWith` (string): The string to replace the generated key with. Can include <{key}> to be replaced with the key.
+- `replaceWith` (string): The string to replace the generated key with. Can include `<{key}>` to be replaced with the key.
 
 ## Avaliable cases
 
