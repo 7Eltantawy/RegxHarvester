@@ -1,4 +1,4 @@
-import { commands, ExtensionContext, window } from "vscode";
+import { commands, ExtensionContext } from "vscode";
 import * as harvestCommands from "./commands/commands";
 import { chooseTemplate } from "./commands/get-selected-template";
 

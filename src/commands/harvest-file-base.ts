@@ -1,5 +1,4 @@
-import { Uri, window } from "vscode";
-import { findAllFilesInWorkspace } from "../utils";
+import { Uri } from "vscode";
 import { mapToOutputString } from "../utils/map-string-output";
 import {
   getMetaJson,
