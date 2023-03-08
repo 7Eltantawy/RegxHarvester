@@ -34,7 +34,9 @@
     "ui",
     "workspace"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartup*Finished"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -72,11 +74,6 @@
         "command": "extension.harvestWorkspace",
         "title": "Harvest Workspace",
         "icon": "assets/icon.png"
-      },
-      {
-        "command": "extension.highlighter",
-        "title": "Harvest Highlighter",
-        "icon": "assets/icon.png"
       }
     ],
     "menus": {
@@ -111,6 +108,11 @@
           "type": "array",
           "default": [],
           "description": "Create your own templates."
+        },
+        "regx-harvester.enableSelectionHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show popup when select text."
         }
       }
     }

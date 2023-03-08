@@ -1,18 +1,18 @@
 import { window } from "vscode";
 import { promptForSelectedTemplate } from "../utils";
 import { predefinedTemplates } from "../templates/predefined-templates";
-import { userDefinedTemplates } from "../templates/templates";
 import { extVersion } from "../config";
 import {
   createExtensionJson,
   getExtensionJson,
 } from "../actions/file-manager/manage-extension-file";
 import { createWorkspaceDir } from "../actions/file-manager/manage-workspace-dir";
+import { getUserDefinedTemplates } from "../utils/config";
 
 export async function getSelectedTemplate(): Promise<TemplateBase | undefined> {
   let template: TemplateBase | undefined;
   const templates: TemplateBase[] = predefinedTemplates.concat(
-    userDefinedTemplates()
+    getUserDefinedTemplates()
   );
 
   try {
@@ -39,7 +39,7 @@ export async function getSelectedTemplate(): Promise<TemplateBase | undefined> {
 export async function chooseTemplate(): Promise<TemplateBase | undefined> {
   let template: TemplateBase | undefined;
   const templates: TemplateBase[] = predefinedTemplates.concat(
-    userDefinedTemplates()
+    getUserDefinedTemplates()
   );
 
   template = await promptForSelectedTemplate(templates);

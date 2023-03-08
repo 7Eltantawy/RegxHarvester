@@ -1,6 +1,8 @@
 import { commands, ExtensionContext } from "vscode";
 import * as harvestCommands from "./commands/commands";
 import { chooseTemplate } from "./commands/get-selected-template";
+import { registerHover } from "./actions/selection/hover";
+import { registerSelectionBehavior } from "./actions/selection/selection";
 
 // Select Template
 // Create .stringharvest Folder
@@ -11,6 +13,9 @@ import { chooseTemplate } from "./commands/get-selected-template";
 // Ask if you to replace
 
 export function activate(context: ExtensionContext) {
+  registerHover(context);
+  registerSelectionBehavior(context);
+
   context.subscriptions.push(
     commands.registerCommand("extension.chooseTemplate", chooseTemplate),
 
