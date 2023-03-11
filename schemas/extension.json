@@ -1,4 +1,4 @@
-export const extensionSchema = `
+
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "RegxHarvest",
@@ -81,7 +81,7 @@ export const extensionSchema = `
         },
         "replaceWith": {
           "type": "string",
-          "description": "Replace generated key with\\nYou can use <{key}> to be replaced with key"
+          "description": "Replace generated key with\nYou can use <{key}> to be replaced with key"
         }
       }
     },
@@ -140,19 +140,19 @@ export const extensionSchema = `
         },
         "outputFileName": {
           "type": "string",
-          "description": "Output file name\\nfor example:\\nAppString.dart"
+          "description": "Output file name\nfor example:\nAppString.dart"
         },
         "outputFileTemplate": {
           "type": "string",
-          "description": "Output file body template\\nfor example:\\nclass AppString{\\n<{body}>\\n}"
+          "description": "Output file body template\nfor example:\nclass AppString{\n<{body}>\n}"
         },
         "stringTemplate": {
           "type": "string",
-          "description": "String template that will be stored in generated file\\nfor example:\\nstatic const String <{key}> = <{value}>"
+          "description": "String template that will be stored in generated file\nfor example:\nstatic const String <{key}> = <{value}>"
         },
         "replaceTemplate": {
           "type": "string",
-          "description": "Template that will used for replace string in original files\\nfor example:\\nAppString.<{key}>"
+          "description": "Template that will used for replace string in original files\nfor example:\nAppString.<{key}>"
         },
         "templateKeyConfig": {
           "$ref": "#/definitions/templateKeyConfig"
@@ -177,4 +177,3 @@ export const extensionSchema = `
   }
 }
 
-`;

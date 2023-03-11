@@ -16,11 +16,7 @@ export function extensionConfingsToJson(
     }
     return value;
   };
-  return JSON.stringify(
-    { $schema: "./extension.schema.json", ...extensionConfings },
-    replacer,
-    2
-  );
+  return JSON.stringify({ ...extensionConfings }, replacer, 2);
 }
 
 export function extensionConfingsFromJson(json: string): ExtensionConfings {

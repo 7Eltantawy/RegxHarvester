@@ -37,6 +37,12 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "jsonValidation": [
+      {
+        "fileMatch": ".harvest/extension.json",
+        "url": "./schemas/extension.json"
+      }
+    ],
     "commands": [
       {
         "command": "extension.harvestReplace",
