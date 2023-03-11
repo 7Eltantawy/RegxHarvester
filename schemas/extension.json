@@ -1,4 +1,3 @@
-
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "RegxHarvest",
@@ -47,18 +46,6 @@
             "pascalCase",
             "pathCase",
             "sentenceCase",
-            "snakeCase",
-            "lowerCase",
-            "localeLowerCase",
-            "lowerCaseFirst",
-            "spongeCase",
-            "swapCase",
-            "titleCase",
-            "upperCase",
-            "localeUpperCase",
-            "upperCaseFirst",
-            "isUpperCase",
-            "isLowerCase"
           ]
         },
         "keyConfigs": {
@@ -176,4 +163,3 @@
     }
   }
 }
-
