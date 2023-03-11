@@ -111,7 +111,6 @@ Configuration for generated keys. Includes the following properties:
 
 - `.harvest` Folder
   - `extension.json` file
-  - `extension.schema.json` file
   - `meta.json` file
 - Output file with name you defined to path you defined
 
