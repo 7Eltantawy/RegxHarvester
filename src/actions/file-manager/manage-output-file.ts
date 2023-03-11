@@ -30,7 +30,7 @@ export async function createOutputFile(
   await vscode.workspace.fs.writeFile(outputFilePath, fileDataBuffer);
 }
 
-export async function addToOutputFile(outputStringList: OutputString[]) {}
+// export async function addToOutputFile(outputStringList: OutputString[]) {}
 
 export async function getOutputFile() {}
 
