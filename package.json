@@ -3,7 +3,7 @@
   "displayName": "Regx Harvester",
   "icon": "assets/icon.png",
   "description": "Configure once harvest everywhere.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "7eltantawy",
   "keywords": [
     "String extract",
@@ -77,11 +77,6 @@
       {
         "command": "extension.harvestWorkspace",
         "title": "Harvest Workspace",
-        "icon": "assets/icon.png"
-      },
-      {
-        "command": "extension.highlighter",
-        "title": "Harvest Highlighter",
         "icon": "assets/icon.png"
       }
     ],
