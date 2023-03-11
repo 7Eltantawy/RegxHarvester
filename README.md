@@ -4,7 +4,7 @@
 
 # Regx Harvester
 
-[![version](https://img.shields.io/badge/version-0.0.1-gray.svg)](https://github.com/HasanEltantawy/TemplaGen/)
+![Badge](https://img.shields.io/github/v/release/HasanEltantawy/RegxHarvester)
 
 Configure once harvest everywhere.
 
